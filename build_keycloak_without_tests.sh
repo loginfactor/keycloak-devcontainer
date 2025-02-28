@@ -1,2 +1,2 @@
 cd keycloak
-./mvnw clean install -DskipTests -DskipTestsuite -DskipExamples -Ddebug
+./mvnw clean install -DskipTests -DskipTestsuite -DskipExamples

@@ -10,14 +10,11 @@ services:
       dockerfile: Dockerfile
     environment:
       # MAVEN_OPTS: -Dmaven.build.cache.enabled=true
-      DEBUG: 'true'
-      DEBUG_PORT: '*:8787'
-      DEBUG_SUSPEND: 'y'
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
 
-      KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: admin
-
-      # KC_HTTP_ENABLED: true
+      KC_HTTP_ENABLED: true
+      # KC_LOG_LEVEL: DEBUG
       # KC_HOSTNAME_STRICT: false
       # KC_HEALTH_ENABLED: true
       # KC_METRICS_ENABLED: true
@@ -35,7 +32,6 @@ services:
 
     ports:
       - "8080:8080"
-      - "8787:8787"
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
     volumes:
