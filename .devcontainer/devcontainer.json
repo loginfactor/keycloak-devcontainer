@@ -1,0 +1,26 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/java-postgres
+{
+	"name": "Keycloak Devcotainer",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "keycloak",
+	"workspaceFolder": "/workspace",
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "21",
+			"installMaven": "true",
+			"mavenVersion": "3.9.9"
+		},
+		"ghcr.io/devcontainers/features/git:1": {}
+	},
+	"postCreateCommand": "sh clone_keycloak.sh",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dcortes92.FreeMarker",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	}
+}
