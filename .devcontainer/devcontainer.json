@@ -14,13 +14,18 @@
 		},
 		"ghcr.io/devcontainers/features/git:1": {}
 	},
-	"postCreateCommand": "sh clone_keycloak.sh",
+	"mounts": [
+		"source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached" // Referece your ssh keys here
+	],
 	"customizations": {
 		"vscode": {
 			"extensions": [
 				"dcortes92.FreeMarker",
 				"ms-azuretools.vscode-docker"
 			]
+		},
+		"settings": {
+			"remote.SSH.enable": true
 		}
 	}
 }

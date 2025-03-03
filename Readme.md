@@ -5,24 +5,25 @@
 3. Click the Popup to open the project in a DevContainer
 3. a. If no popup appears press F1 ans click on `Dev Containters: Rebuild Container`
 
+
+
 ## How to Clone Keycloak
-1. Run `./clone_keycloak.sh`
+1. git clone `<your fork url>` keycloak
+2. If you want to use ssh keys enable the ssh key mount in .devcontainer/devcontainer.json AND use sudo git clone ... or change read permissions
 
 ## How to Build Keycloak
 1. Run `./build_keycloak_without_tests.sh`
 
 ## How to Debug Keycloak
 1. Click on the Debugging tab at the left
-2. Click on Run and Debug
-3. Select Java
-4. Select `org.keycloak.Keycloak`
+2. Select `Start & Debug Keycloak` at the top
+3. Click the green triangle (This might take some minutes)
 
 Now, the server should start, and you can set breakpoints to debug Keycloak.
 
 Some more information regarding debugging Java in VSCode like [conditional breakpoints](https://code.visualstudio.com/docs/java/java-debugging#_breakpoint-conditional-breakpoint), [expression evaluation](https://code.visualstudio.com/docs/java/java-debugging#_expression-evaluation), or [hot code replacement](https://code.visualstudio.com/docs/java/java-debugging#_hot-code-replace)  can be found here [code.visualstudio.com/docs/java/java-debugging](https://code.visualstudio.com/docs/java/java-debugging)
 
 If the server fails during the start with a missing version error message refer to this [issue](https://github.com/keycloak/keycloak/issues/37740)
-
 
 
 ## How to Run Tests
