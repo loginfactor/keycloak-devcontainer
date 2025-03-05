@@ -12,14 +12,18 @@
 2. If you want to use ssh keys enable the ssh key mount in .devcontainer/devcontainer.json AND use sudo git clone ... or change read permissions
 
 ## How to Build Keycloak
-1. Run `./build_keycloak_without_tests.sh`
+1. Click on the Running / Debugging tab at the left
+2. Start the `Build Keycloak without tests` run configuration
 
-## How to Debug Keycloak
-1. Click on the Debugging tab at the left
-2. Select `Start & Debug Keycloak` at the top
-3. Click the green triangle (This might take some minutes)
+## How to Start Keycloak
+1. Click on the Running / Debugging tab at the left
+2. Start the `Start Keycloak` run configuration
 
 Now, the server should start, and you can set breakpoints to debug Keycloak.
+
+## How to Debug Keycloak
+1. Click on the Running / Debugging tab at the left
+2. Start the `Attach Debugger` run configuration
 
 Some more information regarding debugging Java in VSCode like [conditional breakpoints](https://code.visualstudio.com/docs/java/java-debugging#_breakpoint-conditional-breakpoint), [expression evaluation](https://code.visualstudio.com/docs/java/java-debugging#_expression-evaluation), or [hot code replacement](https://code.visualstudio.com/docs/java/java-debugging#_hot-code-replace)  can be found here [code.visualstudio.com/docs/java/java-debugging](https://code.visualstudio.com/docs/java/java-debugging)
 
