@@ -6,51 +6,10 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Current File",
-            "request": "launch",
-            "mainClass": "${file}"
-        },
-        {
-            "type": "java",
-            "name": "KcAdmMain",
-            "request": "launch",
-            "mainClass": "org.keycloak.client.admin.cli.KcAdmMain",
-            "projectName": "keycloak-admin-cli"
-        },
-        {
-            "type": "java",
-            "name": "KcRegMain",
-            "request": "launch",
-            "mainClass": "org.keycloak.client.registration.cli.KcRegMain",
-            "projectName": "keycloak-admin-cli"
-        },
-        {
-            "type": "java",
             "name": "Start & Debug Keycloak",
             "request": "launch",
             "mainClass": "org.keycloak.Keycloak",
             "projectName": "keycloak-junit5"
-        },
-        {
-            "type": "java",
-            "name": "KeycloakMain",
-            "request": "launch",
-            "mainClass": "org.keycloak.quarkus.runtime.KeycloakMain",
-            "projectName": "keycloak-quarkus-server"
-        },
-        {
-            "type": "java",
-            "name": "HostsTest",
-            "request": "launch",
-            "mainClass": "org.keycloak.services.clientregistration.policy.impl.HostsTest",
-            "projectName": "keycloak-services"
-        },
-        {
-            "type": "java",
-            "name": "MigrateTest",
-            "request": "launch",
-            "mainClass": "org.keycloak.test.migration.MigrateTest",
-            "projectName": "keycloak-tests-migration-util"
         }
     ]
 }
