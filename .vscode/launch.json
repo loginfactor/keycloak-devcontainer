@@ -5,6 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Build Keycloak",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "bash",
+            "args": [
+                "-c", 
+                "./mvnw -pl quarkus/deployment,quarkus/dist -am clean install"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/keycloak"
+        },
+        {
             "name": "Build Keycloak without tests",
             "type": "node",
             "request": "launch",

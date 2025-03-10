@@ -68,7 +68,6 @@ services:
       PGADMIN_SERVER_JSON_FILE: "/tmp/servers.json"
     volumes:
       - ./pgadmin-servers.json:/tmp/servers.json:ro
-
     depends_on:
       - db
     entrypoint:
