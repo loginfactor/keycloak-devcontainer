@@ -5,8 +5,73 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Build Keycloak",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "bash",
+            "args": [
+                "-c", 
+                "./mvnw -pl quarkus/deployment,quarkus/dist -am clean install"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/keycloak"
+        },
+        {
+            "name": "Build Keycloak without tests",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "bash",
+            "args": [
+                "-c", 
+                "./mvnw -pl quarkus/deployment,quarkus/dist -am -DskipTests clean install"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/keycloak"
+        },
+        {
+            "name": "Start Keycloak",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "java",
+            "args": [
+                "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005",
+                "-jar",
+                "quarkus/server/target/lib/quarkus-run.jar",
+                "start-dev"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/keycloak"
+        },
+        {
             "type": "java",
-            "name": "Start & Debug Keycloak",
+            "request": "attach",
+            "name": "Attach Debugger",
+            "hostName": "localhost",
+            "port": 5005
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "KcAdmMain",
+            "request": "launch",
+            "mainClass": "org.keycloak.client.admin.cli.KcAdmMain",
+            "projectName": "keycloak-admin-cli"
+        },
+        {
+            "type": "java",
+            "name": "KcRegMain",
+            "request": "launch",
+            "mainClass": "org.keycloak.client.registration.cli.KcRegMain",
+            "projectName": "keycloak-admin-cli"
+        },
+        {
+            "type": "java",
+            "name": "[EXPERIMENTAL] Start & Debug Keycloak",
             "request": "launch",
             "mainClass": "org.keycloak.Keycloak",
             "projectName": "keycloak-junit5"
