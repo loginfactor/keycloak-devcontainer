@@ -5,6 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Clone or update Keycloak repository",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "bash",
+            "args": [
+                "${workspaceFolder}/scripts/clone-keycloak.sh",
+                "${input:keycloakRepositoryUrl}",
+                "${input:keycloakRef}"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        {
             "name": "Build Keycloak",
             "type": "node",
             "request": "launch",
@@ -96,6 +109,20 @@
             "request": "launch",
             "mainClass": "org.keycloak.test.migration.MigrateTest",
             "projectName": "keycloak-tests-migration-util"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "keycloakRepositoryUrl",
+            "type": "promptString",
+            "description": "Git URL of the Keycloak repository to clone",
+            "default": "git@github.com:keycloak/keycloak.git"
+        },
+        {
+            "id": "keycloakRef",
+            "type": "promptString",
+            "description": "Branch, tag or commit to check out (default: main; clear to keep current branch)",
+            "default": "main"
         }
     ]
 }
