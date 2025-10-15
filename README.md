@@ -17,12 +17,22 @@ A [Devcontainer](https://containers.dev/) for [Keycloak](https://www.keycloak.or
 ### Clone your Keycloak fork
 You have to clone your fork of the Keycloak repository to the "keycloak" directory inside this repository root directory.
 
-You can do this from within the running devcontainer by running the following command in terminal:
- ```
- git clone `<your fork url>` keycloak
- ```
+#### Option A: Use the interactive launch configuration (recommended)
+1. Open the **Run and Debug** view in VS Code.
+2. Select the `Clone or update Keycloak repository` configuration.
+3. When prompted, enter the Git URL of your fork (defaults to `git@github.com:keycloak/keycloak.git`).
+4. Optionally provide a branch, tag, or commit to check out (defaults to `main`; clear the prompt to keep the current branch).
 
-If you want to use ssh keys enable the ssh key mount in .devcontainer/devcontainer.json AND use sudo git clone ... or change read permissions
+The devcontainer runs a helper script that clones the repository if it does not yet exist, or updates the existing clone while pointing the `origin` remote to the provided URL.
+
+#### Option B: Clone manually from the terminal
+You can still clone your repository manually from within the running devcontainer by running the following command in a terminal:
+
+```
+git clone <your fork url> keycloak
+```
+
+If you want to use SSH keys enable the SSH key mount in `.devcontainer/devcontainer.json` AND use `sudo git clone ...` or change read permissions
 
 ## Build Keycloak
 1. Click on the Running / Debugging tab at the left
